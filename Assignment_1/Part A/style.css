@@ -1,0 +1,171 @@
+h1{
+    text-align: center;
+    font-style: normal;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 20px;
+    top: 1px;
+    text-transform: uppercase;
+}
+
+body {
+    background-image: url("images/bg2.png");
+    background-color: black;
+    align-items: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.about {
+    color: beige;
+}
+
+.about p{
+    text-align: justify;
+    margin-left: 30px;
+}
+
+.main {
+    width: 100%;
+    padding: 70px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main h1{
+    text-align: center;
+    font-size: large;
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: wheat;
+}
+
+.main .hero_image_box{
+    width: 95%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.main .hero_image_box .hero_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.main .hero_image_box .hero_image img{
+    width: 100%;
+    transition: 0.3s;
+}
+
+.main .hero_image_box .hero_image:hover img{
+    opacity: 0.4;
+}
+
+a{
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    left: 590px;
+    padding: 15px 25px;
+    position: relative;
+    text-decoration: none;
+    background-color: yellow;
+    color: black;
+}
+
+a:hover, a:active {
+    background-color: rgb(155, 204, 81);
+}
+
+body h1{
+    text-align: center;
+    padding: 40px;
+    color: beige;
+}
+
+.list table th, tr, td{
+    color: beige;
+    border: 1px solid;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: antiquewhite;
+    text-align: center;
+    align-items: center;
+    left: 20px;
+}
+
+tr:hover {
+    background-color: coral;
+}
+
+body .registration form{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+body .registration form label{
+    color: antiquewhite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Footer*/
+
+footer {
+    width: 100%;
+    padding: 30px 0 0 20px;
+    background: brown;
+}
+
+footer .footer_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+footer .footer_main .footer_tag {
+    text-align: center;
+    color: wheat;
+}
+
+footer .footer_main .footer_tag h2 {
+    color: wheat;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+footer p {
+    margin: 10px 0;
+    color: white;
+}
+
+.footer .footer_main .footer_tag i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer .footer_main .footer_tag i:hover {
+    color: coral;
+}
+
+footer .end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+footer .end span {
+    color: coral;
+    margin-left: 10px;
+}
+
+
