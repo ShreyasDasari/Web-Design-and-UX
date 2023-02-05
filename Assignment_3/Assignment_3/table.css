@@ -1,0 +1,53 @@
+#myTable input {
+	margin-left: 5px;
+}
+
+#myTable {
+	border:2px solid green;
+	border-collapse: collapse;
+	margin: 30px 30px 20px 40px;
+}
+#myTable td, th {
+	border:1px solid green;
+	padding: 5px;
+}
+#myTable th {
+	color: #fff;
+	background-color: #a7c942;
+}
+
+#myTable td:nth-child(9),
+#myTable th:nth-child(9) {
+	display: none;
+}
+
+#myTable td:nth-child(10),
+#myTable th:nth-child(10) {
+	display: none;
+}
+
+.visible-cell {
+	display: table-cell !important;
+}
+
+.dropDownTextArea {
+	visibility: collapse;
+}
+
+#button {
+	color:#fff;
+	background-color: orange;
+	border-radius: 3px;
+	border:2px solid orange;
+	margin-left: 180px;
+}
+
+#button:disabled {
+	border: 1px solid grey;
+	background-color: #c4c1c1;
+	color: grey;
+}
+
+body {
+	font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+}
