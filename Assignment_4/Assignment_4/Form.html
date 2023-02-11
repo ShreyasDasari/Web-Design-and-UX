@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+
+	<title>Feedback</title>
+  	
+</head>
+<body>
+ 	<div id="container">
+	 
+	 	<main>
+	 		<h2>Feedback</h2>
+	 		<h3>Love something? Hate something? Let us know!</h3>
+		 	Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form name="myform" target="_self" method="get" action="table.html" onsubmit="return handleData()">
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+				<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+				<br>
+				<div style="display:none; color: red;" id="title_error">
+					Please select atleast one option!
+				</div>
+				<br>
+
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" required="required" placeholder="First Name" onblur="inputvalidation(this,1,'FName')"/>	
+				<br>
+				<div id="errorFName" style="display: none; color: red;">
+					Invalid Name. Please enter alphabets only!	
+				</div>
+				<div id="invalid" style="display: none; color: red;">
+					Please enter first name!
+				</div>
+				<br>
+			
+
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" required="required" placeholder="Last Name" onblur="inputvalidation(this,1,'LName')" />
+				<br>
+				<div id="errorLName" style="display: none;color: red;">
+					Invalid Name. Please enter alphabets only!
+				</div>
+				<br>
+			
+
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" required="required" placeholder="username@northeastern.edu" onblur="inputvalidation(this,2)" />
+				<br>
+				<div id="errorEmail" style="display: none;color: red;">
+					Invalid Email. Please enter valid email address!
+				</div>
+				<br>
+			
+
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" required="required" placeholder="xxx-xxx-xxxx" onblur="inputvalidation(this,3)"/>
+				<br>
+				<div id="errorPhone" style="display: none;color: red;">
+					Invalid Phone number. Please enter valid phone number!
+				</div>
+				<br>
+
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" required="required" placeholder="address" onblur="inputvalidation(this,5)"/>
+				<br>
+				<div id="invalidaddress" style="display: none;color: red;">
+					Field Empty. Please enter address!
+				</div>
+				<br>
+
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+				<br><br>
+
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" required="required" placeholder="city" onblur="inputvalidation(this,6)" />
+				<br>
+				<div id="invalidcity" style="display: none;color: red;">
+					Field Empty. Please enter city!
+				</div>
+				<br>
+
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" required="required" placeholder="state" onblur="inputvalidation(this,7)" />
+				<br>
+				<div id="invalidstate" style="display: none;color: red;">
+					Field Empty. Please enter state!
+				</div>
+				<br>
+			
+            	<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" required="required" placeholder="xxxxxx" onblur="inputvalidation(this,4)"/>
+				<br>
+				<div id="errorZipcode" style="display: none; color: red;">
+					Invalid Zipcode. Enter 6 digit zipcode
+				</div>
+				<br>
+             
+            	<label for="hear">How did you hear about us?*:</label>
+				<input type='checkbox' name="source" value="facebook" /> Facebook
+            	<input type='checkbox' name="source" value="google" /> Google
+				<input type='checkbox' name="source" value="yelp" /> Yelp 
+				<br>
+				<div id="check_option" style="display: none;color: red;">
+					Select atleast one option!
+				</div>
+				<br> 
+
+				<label for="car">Car Models:</label>
+				<select name="cars" id="cars" required="required" onchange="changeCarModel(this)">
+					<option value="" hidden>Select a Car Model</option>
+					<option value="Honda">Honda</option>
+					<option value="Hyundai">Hyundai</option>
+					<option value="Ford">Ford</option>
+					<option value="BMW">BMW</option>
+					<option value="Audi">Audi</option>
+				</select>
+				<br>
+
+				<div id="honda-section" style="display: none;">
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Honda Brio" id="brio" onclick="onBoxChecked(this)">
+					<label for="hatchback">Brio</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Honda Civic" id="civic" onclick="onBoxChecked(this)">
+					<label for="sedan">Civic</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Honda CR-V" id="crv" onclick="onBoxChecked(this)">
+					<label for="SUV">CR-V</label>
+					<br><br>
+				</div>
+				<div id="hyundai-section" style="display: none;">
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Hyundai i20" onclick="onBoxChecked(this)">
+					<label for="hatchback">i20</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Hyundai Elantra" onclick="onBoxChecked(this)">
+					<label for="sedan">Elantra</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Hyundai Creta" onclick="onBoxChecked(this)">
+					<label for="SUV">Creta</label>
+					<br><br>
+				</div>
+				<div id="ford-section" style="display: none;">
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Ford Focus" onclick="onBoxChecked(this)">
+					<label for="hatchback">Focus</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Ford Fiesta" onclick="onBoxChecked(this)">
+					<label for="sedan">Fiesta</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Ford Ecosport" onclick="onBoxChecked(this)">
+					<label for="SUV">Ecosport</label>
+					<br><br>
+				</div>
+				<div id="BMW-section" style="display: none;">
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="BMW i3" onclick="onBoxChecked(this)">
+					<label for="hatchback">i3</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="BMW z4" onclick="onBoxChecked(this)">
+					<label for="sedan">z4</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="BMW x6" onclick="onBoxChecked(this)">
+					<label for="SUV">x6</label>
+					<br><br>
+				</div>
+				<div id="Audi-section" style="display: none;">
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Audi A3" onclick="onBoxChecked(this)">
+					<label for="hatchback">A3</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Audi r8" onclick="onBoxChecked(this)">
+					<label for="sedan">r8</label>
+					<br><br>
+					<input type="checkbox" name="modeloffered" value="Audi Q7" onclick="onBoxChecked(this)">
+					<label for="SUV">Q7</label>
+					<br><br>
+				</div>
+
+				<div id="note" style="display: none;">
+					<label for="feedback">Feedback*:</label>
+					<input type="text" id="feedback" name="feedback" required="required" onblur="inputvalidation(this,8)">
+					<br>
+					<div id="invalidfeedback" style="display: none;color: red;">
+						Field Empty. Please enter feedback!
+					</div>
+					<br>
+				</div>
+				<br>
+
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" onblur="inputvalidation(this,9)"></textarea>
+				<br>
+				<div id="invalidcomments" style="display: none;color: red;">
+					Field Empty. Please enter comments!
+				</div>
+				<br>
+				<br><br>
+				<input type="Submit" onclick="return resetForm();">
+				<input type="Reset" onclick="return resetForm();">
+				<br><br>
+		 	</form>
+	 		</main>
+	</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
