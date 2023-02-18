@@ -1,0 +1,30 @@
+.card {
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+  
+  .input-group {
+    width: 50% !important;
+    margin: 0 auto;
+  }
+  
+  .card-title {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+  .form {
+    margin: auto;
+    width: 30vw;
+    padding: 5rem;
+    background-color: skyblue;
+    color: #fafafa;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .form {
+      width: 90vw;
+      padding: 2rem;
+      margin: 1rem;
+    }
+  }
+  
