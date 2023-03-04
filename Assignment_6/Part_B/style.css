@@ -1,0 +1,35 @@
+.html{
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+    background-color: rgb(69, 80, 177);
+    width: 100%;
+    max-width: 500px;
+    margin: 8rem auto;
+    padding: 4rem 7rem;
+    border-radius: 1rem;
+}
+
+.time {
+    font-size: 5rem;
+    font-weight: 300;
+    margin: 1rem;
+}
+
+button {
+    display: inline-block;
+    background-color: white;
+    border-color: white;
+    font-size: 2rem;
+}
+
+button:hover {
+    opacity: 0.7;
+
+}
+
+button:active {
+    background-color: rgb(69, 80, 177)
+}
