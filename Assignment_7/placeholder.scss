@@ -1,0 +1,15 @@
+//placeholder selector
+%button-format {
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: black;
+}
+
+.main-btn{
+    @extend %button-format;
+    background-color: orange;
+
+    &:hover {
+        background-color: rgb(222, 255, 34);
+    }
+}

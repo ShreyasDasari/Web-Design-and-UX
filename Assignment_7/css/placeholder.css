@@ -1,0 +1,12 @@
+.main-btn {
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: black;
+}
+
+.main-btn {
+  background-color: orange;
+}
+.main-btn:hover {
+  background-color: rgb(222, 255, 34);
+}/*# sourceMappingURL=placeholder.css.map */
