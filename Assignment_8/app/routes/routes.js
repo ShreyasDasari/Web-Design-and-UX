@@ -6,8 +6,12 @@ let createNewPassword = async (password) => {
     return newPassword; 
 }
 
-module.exports = (app) => {
 
+
+module.exports = (app) => {
+    app.get('/', async function(req, res) {
+        res.status(200).send('This is not the route you are looking for ! Try using postman xD !! ');
+    });
     app.get('/user/getAll', async function(req, res) {
         Sample.find(function(err, samples) {
             // if there is an error retrieving, send the error.
@@ -19,10 +23,12 @@ module.exports = (app) => {
         });
     });
 
+    
+
     app.post('/user/create', async function(req, res) {
-        let {userEmail,userPassword} = req.body
+        let {userName,userEmail,userPassword} = req.body
         let hashPassword = await createNewPassword(userPassword);
-        let rec = new Sample({userEmail: userEmail, userPassword: hashPassword});
+        let rec = new Sample({userName: userName, userEmail: userEmail, userPassword: hashPassword});
         let regexEmail = /([\w\.]+)@([\w\.]+)\.(\w+)/;
         //let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$");
         let strongRegex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.*[0-9])(?=.{8,})/;
@@ -42,7 +48,7 @@ module.exports = (app) => {
     });
 
     app.put('/user/edit', async function(req,res){
-        const {userEmail, userPassword, newEmail, newPassword} = req.body;
+        const {userName, newName, userEmail, userPassword, newEmail, newPassword} = req.body;
         let regexEmail = /([\w\.]+)@([\w\.]+)\.(\w+)/;
         let strongRegex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.*[0-9])(?=.{8,})/;
         if((!(newEmail.match(regexEmail))) || (!(newPassword.match(strongRegex)))){
@@ -59,10 +65,11 @@ module.exports = (app) => {
                         }else{
                             const isMatch = await bcrypt.compare(userPassword,n.userPassword);
                             if (isMatch){
-                                console.log("hitesssss")
+                                console.log("Password Matched!")
                                 Sample.findOneAndUpdate({
                                     userEmail : userEmail,
-                                },{
+                                }, {
+                                    userName : newName,
                                     userEmail : newEmail,
                                     userPassword : hashPassword
                                 })
@@ -79,7 +86,7 @@ module.exports = (app) => {
     })
 
     app.delete('/user/delete', async function(req,res){
-        const {userEmail,userPassword} = req.body;
+        const {userName,userEmail,userPassword} = req.body;
         let regexEmail = /([\w\.]+)@([\w\.]+)\.(\w+)/;
         let strongRegex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.*[0-9])(?=.{8,})/;
         if((!(userEmail.trim().match(regexEmail))) || (!(userPassword.trim().match(strongRegex)))){

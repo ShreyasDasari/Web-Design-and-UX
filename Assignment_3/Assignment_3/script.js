@@ -153,7 +153,7 @@ function addNewStudent() {
 
     // hydrate the new row before adding
     const count = document.querySelectorAll("input[type=checkbox]").length + 1;
-
+    const newCount = count + 1;
     const rows = newRow.querySelectorAll("td");
 
     rows[1].innerHTML = `Student ${count}`;
