@@ -1,0 +1,33 @@
+label {
+    float: left;
+    width: 150px;
+}
+
+#container {
+    width: 700px;
+    margin: auto;
+    background-color: beige;
+}
+
+main {
+    padding: 50px;
+}
+
+table{
+    margin: auto;
+    border: 4mm ridge rgba(58, 175, 93, 0.6);
+    border-style: double;
+}
+
+table th{
+    border: 2px solid blue;
+}
+
+table td{
+    border: 2px solid green;
+    padding: 25px;
+}
+
+h1{
+    text-align: center;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html"
+          >PESTANA CR7 <span class="text-success">SIUUU</span></a
+        >
+      </div>
+    </nav>
+
+    <form class="form">
+      <h1 class="form-header" style="color: black">Login Form:</h1>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Enter your email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Register for annual CR7 newsletter.</label>
+      </div>
+      <button type="submit" id="login" class="btn btn-warning" style="background-color: red">Submit</button>
+      <button
+        type="button"
+        class="btn text-light"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Terms And Conditions
+      </button>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" style="color: #000">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Terms and Conditions
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              The following terminology applies to these Terms and Conditions,
+              Privacy Statement and Disclaimer Notice and all Agreements:
+              “Client”, “You” and “Your” refers to you, the person log on this
+              website and compliant to the Company's terms and conditions. “The
+              Company”, “Ourselves”, “We”, “Our” and “Us”, refers to our
+              Company. “Party”, “Parties”, or “Us”, refers to both the Client
+              and ourselves. All terms refer to the offer, acceptance and
+              consideration of payment necessary to undertake the process of our
+              assistance to the Client in the most appropriate manner for the
+              express purpose of meeting the Client's needs in respect of
+              provision of the Company's stated services, in accordance with and
+              subject to, prevailing law of Netherlands. Any use of the above
+              terminology or other words in the singular, plural, capitalization
+              and/or he/she or they, are taken as interchangeable and therefore
+              as referring to same.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                data-bs-dismiss="modal"
+                class="btn btn-warning"
+              >
+                Accept
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="liveAlertPlaceholder"></div>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

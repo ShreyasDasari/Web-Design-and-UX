@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <center>
+        <h1 style="background-color: rgb(69, 80, 177); color: white; padding: 10px;">Calculator Login</h1><br>
+        <br> 
+        <div class="container">
+            <div class="col-md-5 col-md-offset-3">
+                <form action="myForm" action="#" id="form" onsubmit="Validate()">
+                    <div class="form">
+                        <label for="Name">Username:<span style="color: black;">*</span></label>
+                        <input type="text" name="username" id="name" class="form-control" style="background-color: rgb(8, 11, 37);color: white;" placeholder="Enter your username"/>
+                        <p class="error"></p>
+                    </div>
+                    <div class="form">
+                        <label for="Name">Email:<span style="color: black;">*</span></label>
+                        <input type="text" name="" id="email" class="form-control" style="background-color: rgb(8, 11, 37); color: white;" 
+                            placeholder="Enter your northeastern email"/>
+                        <p class="emailerror"></p>
+                    </div>
+                    <div class="form">
+                        <label for="Name">Password:<span style="color: black;">*</span></label>
+                        <input type="password" name="" id="password" class="form-control" style="background-color: rgb(8, 11, 37);color: white;"
+                            placeholder="Enter your password" />
+                        <p class="passworderror"></p>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="" class="btn btn-outline-primary" value="Login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://github.com/js-cookie/js-cookie/releases/download/v3.0.1/js.cookie.min.js"></script>
+    <script>
+              $(document).ready(function () {
+                    $("form").submit((e) => false);
+                });
+
+                function Validate() {
+                    var emailPattern = /([\w\.]+)@(northeastern+)\.(edu)/;  //regex email
+                    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;  //regex password
+                    var un = $("#name").val();
+                    var pass = $("#password").val();
+                    var em = $("#email").val();
+                    var userCheck = false;
+                    var emailCheck = false;
+                    var passCheck = false;
+
+                    //username validation
+                    if (un == "") {
+                        $(".error").html(
+                            "Please enter username." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (un.length < 8) {
+                        $(".error").html(
+                            "Length of the username should be atleast 8 letters long." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (un) {
+                        $(".error").html("");
+                        userCheck = true;
+                    }
+                    //password validation
+                    if (pass == "") {
+                        $(".passworderror").html(
+                            "Please enter password." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (!passwordPattern.test(pass)) {
+                        $(".passworderror").html(
+                            "Password must have Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (pass) {
+                        $(".passworderror").html("");
+                        passCheck = true;
+                    }
+                    //email validation
+                    if (em == "") {
+                        $(".emailerror").html(
+                            "Please enter email." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (!emailPattern.test(em)) {
+                        $(".emailerror").html(
+                            "Please enter email ending with '@northeastern.edu' only." +
+                            " " +
+                            '<i class="fa fa-times" aria-hidden="true"></i>'
+                        );
+                    } else if (em) {
+                        $(".emailerror").html("");
+                        emailCheck = true;
+                    }
+
+                    console.log({ userCheck, emailCheck, passCheck });
+
+                    if (userCheck && emailCheck && passCheck) {
+                        $('#form').trigger('reset');
+                        alert("Login Successful!");
+                        document.location.href = "./calculator.html?username=" + un;
+                    }
+                }
+    </script>
+</body>
+</html>

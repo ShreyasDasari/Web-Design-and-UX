@@ -1,0 +1,114 @@
+/* password validation*/
+
+.pwd-restrictions {
+    list-style: none;
+}
+
+.pwd-restrictions li {
+    line-height: 2.3em;
+}
+
+.pwd-restriction-checked {
+    list-style-image: url('check.png');
+}
+
+
+
+p {
+    color: red;
+    font-family: 'Droid Serif', serif;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Droid Serif', serif;
+}
+
+hr {
+    margin-bottom: 30px;
+    font-family: 'Droid Serif', serif;
+}
+
+div.container {
+    width: 1000px;
+    height: 610px;
+    margin: 50px auto;
+    font-family: 'Droid Serif', serif;
+    position: relative;
+}
+
+div.main {
+    width: 1000px;
+    margin-top: 60px;
+    float: center;
+    padding: 10px 55px 40px;
+    background-color: rgba(187, 255, 184, 0.65);
+    border: 15px solid white;
+    font-family: 'Droid Serif', serif;
+    box-shadow: 0 0 10px;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.message {
+    font: 20px Helvetica, Arial, Sans-serif;
+    display: none;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+}
+
+
+
+/* email validation 
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    width: 50%;
+}
+
+input {
+    font-size: 30px;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border: 5px solid rgba(0, 0, 0, .3);
+}
+
+.message {
+    font: 20px Helvetica, Arial, Sans-serif;
+    display: none;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+}
+
+.error {
+    background: red;
+}
+
+.success {
+    background: green;
+}  */
+
+
+
+
+/* error message*/
+#errmsg {
+    color: red;
+}
